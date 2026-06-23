@@ -174,23 +174,23 @@ describe('calculateSegmentAngles', () => {
   it('first segment starts at -90 deg (12 o-clock)', () => {
     const angles = calculateSegmentAngles([item('a'), item('b')]);
     expect(angles).toHaveLength(2);
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     expect(angles[0]!.startAngle).toBeCloseTo(-90);
   });
 
   it('last segment ends at 270 deg (-90 + 360)', () => {
     const angles = calculateSegmentAngles([item('a'), item('b')]);
     expect(angles).toHaveLength(2);
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     expect(angles[1]!.endAngle).toBeCloseTo(270);
   });
 
   it('total span is exactly 360 deg', () => {
     const angles = calculateSegmentAngles([item('a'), item('b'), item('c')]);
     expect(angles).toHaveLength(3);
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     const first = angles[0]!;
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     const last = angles[2]!;
     expect(last.endAngle - first.startAngle).toBeCloseTo(360);
   });
@@ -207,7 +207,7 @@ describe('calculateSegmentAngles', () => {
   it('single item gets a full 360 deg arc', () => {
     const angles = calculateSegmentAngles([item('solo')]);
     expect(angles).toHaveLength(1);
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     const only = angles[0]!;
     expect(only.endAngle - only.startAngle).toBeCloseTo(360);
   });
@@ -241,7 +241,6 @@ describe('calculateSegmentAngles', () => {
     const items = [item('a'), item('b'), item('c'), item('d')];
     const angles = calculateSegmentAngles(items);
     for (let i = 0; i < angles.length - 1; i++) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       expect(angles[i]!.endAngle).toBeCloseTo(angles[i + 1]!.startAngle);
     }
   });
@@ -281,7 +280,7 @@ describe('buildSegmentLayouts', () => {
       50
     );
     expect(layout).toBeDefined();
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     expect(layout!.color).toBe('#ff0000');
   });
 
@@ -298,13 +297,12 @@ describe('buildSegmentLayouts', () => {
     );
     expect(extraLayouts).toHaveLength(extraItems.length);
     // The 9th item (index 8) cycles back to palette[0]
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+
     expect(extraLayouts[8]!.color).toBe(DEFAULT_PALETTE[0]);
   });
 
   it('carries the original WheelItem on each layout', () => {
     layouts.forEach((layout, i) => {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       expect(layout.item).toBe(items[i]!);
     });
   });
