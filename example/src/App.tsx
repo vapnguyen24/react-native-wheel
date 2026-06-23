@@ -1,7 +1,6 @@
 import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-wheel';
 
-const result = multiply(3, 7);
+const result = 0;
 
 export default function App() {
   return (

@@ -13,15 +13,22 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~55.0.11",
+    "@shopify/react-native-skia": "2.6.6",
     "expo": "~55.0.26",
     "expo-status-bar": "~55.0.6",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-native": "0.83.6",
-    "react-native-web": "~0.21.0"
+    "react-native-gesture-handler": "3.0.2",
+    "react-native-reanimated": "4.4.1",
+    "react-native-svg": "15.15.5",
+    "react-native-web": "~0.21.0",
+    "react-native-worklets": "0.9.2"
   },
   "private": true,
   "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@react-native/metro-config": "^0.86.0",
     "react-native-builder-bob": "^0.43.0",
     "react-native-monorepo-config": "^0.4.0"
   }
