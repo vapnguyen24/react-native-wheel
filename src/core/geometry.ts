@@ -1,4 +1,4 @@
-import type { ImagePosition, LabelPosition } from '../types';
+import type { ImagePosition, LabelPosition, SegmentAngle } from '../types';
 import { degreesToRadians } from '../utils/math';
 
 /**
@@ -89,4 +89,38 @@ export function calculateImagePosition(
   const size = r * 0.18;
   const pos = polarToCartesian(cx, cy, r * 0.45, midAngle);
   return { x: pos.x, y: pos.y, width: size, height: size };
+}
+
+/**
+ * Find which segment index is currently under the pointer (12 o-clock = 270°).
+ *
+ * After total rotation R, a segment at angle θ appears at (θ + R) in screen
+ * coordinates. The pointer is fixed at 270°. To find which segment is under it:
+ *   (θ + R) mod 360 = 270 → θ ≡ (270 − R) (mod 360)
+ * We then map the result back into the [-90, 270) range used by segment angles.
+ *
+ * Marked as a worklet so it can be called from Reanimated UI-thread callbacks.
+ */
+export function computeCurrentSegmentIndex(
+  rotationDeg: number,
+  segmentAngles: readonly SegmentAngle[]
+): number {
+  'worklet';
+  const rawPointer = (((270 - rotationDeg) % 360) + 360) % 360;
+  // Map [270, 360) → [-90, 0) to align with our [-90, 270) segment range
+  const frameAngle = rawPointer >= 270 ? rawPointer - 360 : rawPointer;
+
+  for (let i = 0; i < segmentAngles.length; i++) {
+    const seg = segmentAngles[i];
+    if (
+      seg !== undefined &&
+      frameAngle >= seg.startAngle &&
+      frameAngle < seg.endAngle
+    ) {
+      return i;
+    }
+  }
+
+  // Fallback: last segment (handles floating-point edge at 270° boundary)
+  return segmentAngles.length - 1;
 }
