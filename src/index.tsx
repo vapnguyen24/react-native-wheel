@@ -1,2 +1,12 @@
-// react-native-wheel — public exports
-// Populated in Phase 1 (types) and Phase 8 (Wheel component)
+export type {
+  ImagePosition,
+  LabelPosition,
+  RendererType,
+  SegmentAngle,
+  SegmentLayout,
+  ThemeConfig,
+  WheelItem,
+  WheelProps,
+  WheelRef,
+  WheelState,
+} from './types';
