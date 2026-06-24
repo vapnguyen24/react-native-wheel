@@ -1,6 +1,6 @@
 {
   "name": "@vapng/react-native-wheel",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "High-performance React Native Wheel of Fortune spinner with Reanimated 60fps animations, SVG & Skia renderers, weighted probability, and controlled winner mode",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
