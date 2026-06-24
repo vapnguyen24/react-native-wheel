@@ -1,6 +1,6 @@
 {
   "name": "rn-wheel",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A customizable spinning wheel component for React Native",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -208,16 +208,46 @@
         "preset": {
           "name": "conventionalcommits",
           "types": [
-            { "type": "feat",     "section": "Added" },
-            { "type": "fix",      "section": "Fixed" },
-            { "type": "perf",     "section": "Changed" },
-            { "type": "refactor", "section": "Changed" },
-            { "type": "docs",     "section": "Changed" },
-            { "type": "chore",    "hidden": true },
-            { "type": "style",    "hidden": true },
-            { "type": "test",     "hidden": true },
-            { "type": "build",    "hidden": true },
-            { "type": "ci",       "hidden": true }
+            {
+              "type": "feat",
+              "section": "Added"
+            },
+            {
+              "type": "fix",
+              "section": "Fixed"
+            },
+            {
+              "type": "perf",
+              "section": "Changed"
+            },
+            {
+              "type": "refactor",
+              "section": "Changed"
+            },
+            {
+              "type": "docs",
+              "section": "Changed"
+            },
+            {
+              "type": "chore",
+              "hidden": true
+            },
+            {
+              "type": "style",
+              "hidden": true
+            },
+            {
+              "type": "test",
+              "hidden": true
+            },
+            {
+              "type": "build",
+              "hidden": true
+            },
+            {
+              "type": "ci",
+              "hidden": true
+            }
           ]
         },
         "header": "# Changelog",
