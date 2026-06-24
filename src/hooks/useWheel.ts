@@ -160,7 +160,7 @@ export function useWheel(options: UseWheelOptions): UseWheelResult {
         }
       } catch (err) {
         if (__DEV__) {
-          console.warn('[react-native-wheel] performSpin error:', err);
+          console.warn('[rn-wheel] performSpin error:', err);
         }
         return;
       }

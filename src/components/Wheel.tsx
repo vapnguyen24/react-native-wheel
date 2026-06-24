@@ -151,7 +151,7 @@ export const Wheel = React.memo(
       if (renderer === 'skia') {
         if (SkiaComponent == null) {
           throw new Error(
-            '[react-native-wheel] renderer="skia" requires @shopify/react-native-skia to be installed.'
+            '[rn-wheel] renderer="skia" requires @shopify/react-native-skia to be installed.'
           );
         }
         return (

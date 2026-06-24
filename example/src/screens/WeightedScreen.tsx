@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Wheel } from 'react-native-wheel';
-import type { WheelItem, WheelRef } from 'react-native-wheel';
+import { Wheel } from 'rn-wheel';
+import type { WheelItem, WheelRef } from 'rn-wheel';
 
 const DATA: WheelItem[] = [
   { id: '1', label: 'Grand Prize', weight: 1, color: '#E8413E' },

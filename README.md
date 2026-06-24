@@ -1,6 +1,6 @@
-# react-native-wheel
+# rn-wheel
 
-[![npm version](https://img.shields.io/npm/v/react-native-wheel.svg)](https://www.npmjs.com/package/react-native-wheel)
+[![npm version](https://img.shields.io/npm/v/rn-wheel.svg)](https://www.npmjs.com/package/rn-wheel)
 [![CI](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml/badge.svg)](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![coverage](https://img.shields.io/badge/coverage-90%25-brightgreen)](https://github.com/vapnguyen24/react-native-wheel/actions)
@@ -40,7 +40,7 @@ A high-performance, deterministic **Wheel of Fortune** component for React Nativ
 ## Installation
 
 ```sh
-yarn add react-native-wheel \
+yarn add rn-wheel \
          react-native-reanimated \
          react-native-svg \
          react-native-gesture-handler
@@ -64,7 +64,7 @@ yarn add @shopify/react-native-skia
 ```tsx
 import React, { useRef } from 'react';
 import { View, Button } from 'react-native';
-import { Wheel, type WheelRef } from 'react-native-wheel';
+import { Wheel, type WheelRef } from 'rn-wheel';
 
 const DATA = [
   { id: '1', label: '🎁 Grand Prize', color: '#E8413E' },
