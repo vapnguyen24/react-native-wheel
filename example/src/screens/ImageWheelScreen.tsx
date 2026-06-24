@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Wheel } from 'rn-wheel';
-import type { WheelItem, WheelRef } from 'rn-wheel';
+import { Wheel } from '@vap/react-native-wheel';
+import type { WheelItem, WheelRef } from '@vap/react-native-wheel';
 
 const DATA: WheelItem[] = [
   {

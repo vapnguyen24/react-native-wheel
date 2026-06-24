@@ -1,8 +1,8 @@
-# rn-wheel — React Native Wheel of Fortune Spinner
+# @vap/react-native-wheel — React Native Wheel of Fortune Spinner
 
 A high-performance, fully customizable **Wheel of Fortune / Spinning Wheel** component for React Native (iOS, Android, Web). Powered by `react-native-reanimated` for 60 fps UI-thread animations and `react-native-svg`, with optional `@shopify/react-native-skia` GPU rendering.
 
-[![npm version](https://img.shields.io/npm/v/rn-wheel.svg)](https://www.npmjs.com/package/rn-wheel)
+[![npm version](https://img.shields.io/npm/v/@vap/react-native-wheel.svg)](https://www.npmjs.com/package/@vap/react-native-wheel)
 [![CI](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml/badge.svg)](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![coverage](https://img.shields.io/badge/coverage-90%25-brightgreen)](https://github.com/vapnguyen24/react-native-wheel/actions)
@@ -38,7 +38,7 @@ A high-performance, fully customizable **Wheel of Fortune / Spinning Wheel** com
 ## Installation
 
 ```sh
-yarn add rn-wheel \
+yarn add @vap/react-native-wheel \
          react-native-reanimated \
          react-native-svg \
          react-native-gesture-handler
@@ -62,7 +62,7 @@ yarn add @shopify/react-native-skia
 ```tsx
 import React, { useRef } from 'react';
 import { View, Button } from 'react-native';
-import { Wheel, type WheelRef } from 'rn-wheel';
+import { Wheel, type WheelRef } from '@vap/react-native-wheel';
 
 const DATA = [
   { id: '1', label: '🎁 Grand Prize', color: '#E8413E' },
@@ -210,4 +210,4 @@ Made with [create-react-native-library](https://github.com/callstack/react-nativ
 
 ---
 
-**Keywords:** react native wheel, react native spinner, wheel of fortune react native, rn-wheel, spinning wheel component, react native fortune wheel, reanimated wheel, react native prize wheel, react native random picker
+**Keywords:** react native wheel, react native spinner, wheel of fortune react native, @vap/react-native-wheel, spinning wheel component, react native fortune wheel, reanimated wheel, react native prize wheel, react native random picker

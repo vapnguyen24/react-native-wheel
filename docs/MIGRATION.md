@@ -1,6 +1,6 @@
 # Migration Guide
 
-Migrating to `react-native-wheel` from other popular wheel libraries? Here is what you need to know.
+Migrating to `@vap/react-native-wheel` from other popular wheel libraries? Here is what you need to know.
 
 ---
 
@@ -10,12 +10,12 @@ Migrating to `react-native-wheel` from other popular wheel libraries? Here is wh
 
 ```diff
 - yarn add react-native-wheel-of-fortune
-+ yarn add react-native-wheel react-native-reanimated react-native-svg react-native-gesture-handler
++ yarn add @vap/react-native-wheel react-native-reanimated react-native-svg react-native-gesture-handler
 ```
 
 ### API comparison
 
-| Old prop (`rn-wheel-of-fortune`) | New prop (`react-native-wheel`) | Notes |
+| Old prop (`rn-wheel-of-fortune`) | New prop (`@vap/react-native-wheel`) | Notes |
 |---|---|---|
 | `options` | `data` | Now accepts `WheelItem[]` with explicit `id` fields |
 | `winner` | `controlledWinnerId` | Pass the item `id`, not the index |
@@ -56,12 +56,12 @@ Migrating to `react-native-wheel` from other popular wheel libraries? Here is wh
 
 ```diff
 - yarn add rn-wheel-pick
-+ yarn add react-native-wheel react-native-reanimated react-native-svg react-native-gesture-handler
++ yarn add @vap/react-native-wheel react-native-reanimated react-native-svg react-native-gesture-handler
 ```
 
 ### API comparison
 
-| Old prop (`rn-wheel-pick`) | New prop (`react-native-wheel`) | Notes |
+| Old prop (`rn-wheel-pick`) | New prop (`@vap/react-native-wheel`) | Notes |
 |---|---|---|
 | `selectedIndex` | `controlledWinnerId` | Now uses a string `id` instead of a numeric index |
 | `data` (string[]) | `data` (WheelItem[]) | Must map strings to `{ id, label }` objects |
@@ -102,13 +102,13 @@ If you built your own wheel using D3 or raw SVG paths, you can reuse your path m
 />
 ```
 
-The `pathString` passed to `renderSlice` is already the correct SVG `d` attribute value computed by `react-native-wheel`'s geometry engine, so no recalculation is needed.
+The `pathString` passed to `renderSlice` is already the correct SVG `d` attribute value computed by `@vap/react-native-wheel`'s geometry engine, so no recalculation is needed.
 
 ---
 
 ## Notes on Peer Dependencies
 
-`react-native-wheel` deliberately does **not** bundle Reanimated or SVG — they are peer dependencies. This avoids version conflicts and keeps your app's bundle free of duplicated animation runtimes.
+`@vap/react-native-wheel` deliberately does **not** bundle Reanimated or SVG — they are peer dependencies. This avoids version conflicts and keeps your app's bundle free of duplicated animation runtimes.
 
 Make sure the peer versions you install are compatible:
 
