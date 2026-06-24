@@ -1,100 +1,405 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1782206104142" clover="3.2.0">
-  <project timestamp="1782206104142" name="All files">
-    <metrics statements="77" coveredstatements="68" conditionals="38" coveredconditionals="33" methods="22" coveredmethods="18" elements="137" coveredelements="119" complexity="0" loc="77" ncloc="77" packages="2" files="4" classes="4"/>
-    <package name="core">
-      <metrics statements="72" coveredstatements="67" conditionals="38" coveredconditionals="33" methods="17" coveredmethods="17"/>
+<coverage generated="1782276248726" clover="3.2.0">
+  <project timestamp="1782276248726" name="All files">
+    <metrics statements="325" coveredstatements="313" conditionals="154" coveredconditionals="131" methods="96" coveredmethods="90" elements="575" coveredelements="534" complexity="0" loc="325" ncloc="325" packages="6" files="19" classes="19"/>
+    <package name="src">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="80" coveredstatements="77" conditionals="44" coveredconditionals="39" methods="25" coveredmethods="24"/>
+      <file name="CenterDot.tsx" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/components/CenterDot.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="19" count="37" type="stmt"/>
+        <line num="20" count="37" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+      </file>
+      <file name="Pointer.tsx" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/components/Pointer.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="27" count="32" type="stmt"/>
+        <line num="62" count="4" type="stmt"/>
+      </file>
+      <file name="SectorSlice.tsx" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/components/SectorSlice.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="29" count="125" type="stmt"/>
+        <line num="32" count="125" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="5" type="stmt"/>
+        <line num="36" count="120" type="stmt"/>
+      </file>
+      <file name="Wheel.tsx" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/components/Wheel.tsx">
+        <metrics statements="34" coveredstatements="32" conditionals="17" coveredconditionals="15" methods="13" coveredmethods="12"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="45" count="36" type="stmt"/>
+        <line num="47" count="36" type="stmt"/>
+        <line num="48" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="36" type="stmt"/>
+        <line num="55" count="6" type="stmt"/>
+        <line num="56" count="6" type="stmt"/>
+        <line num="63" count="36" type="stmt"/>
+        <line num="65" count="36" type="stmt"/>
+        <line num="74" count="36" type="stmt"/>
+        <line num="76" count="17" type="stmt"/>
+        <line num="77" count="6" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="84" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="89" count="36" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="94" count="36" type="stmt"/>
+        <line num="96" count="31" type="cond" truecount="2" falsecount="0"/>
+        <line num="104" count="36" type="stmt"/>
+        <line num="106" count="31" type="cond" truecount="2" falsecount="0"/>
+        <line num="114" count="36" type="stmt"/>
+        <line num="128" count="36" type="stmt"/>
+        <line num="136" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="137" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="142" count="2" type="stmt"/>
+        <line num="149" count="34" type="stmt"/>
+      </file>
+      <file name="WheelSVG.tsx" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/components/WheelSVG.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="43" count="29" type="stmt"/>
+        <line num="47" count="29" type="stmt"/>
+        <line num="55" count="121" type="stmt"/>
+        <line num="87" count="2" type="stmt"/>
+      </file>
+      <file name="WheelSkia.tsx" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/components/WheelSkia.tsx">
+        <metrics statements="18" coveredstatements="17" conditionals="12" coveredconditionals="11" methods="6" coveredmethods="6"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="33" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="55" count="3" type="stmt"/>
+        <line num="61" count="10" type="stmt"/>
+        <line num="63" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="67" count="9" type="stmt"/>
+        <line num="68" count="9" type="stmt"/>
+        <line num="70" count="9" type="stmt"/>
+        <line num="98" count="3" type="stmt"/>
+        <line num="115" count="3" type="stmt"/>
+        <line num="130" count="4" type="stmt"/>
+        <line num="135" count="4" type="stmt"/>
+        <line num="136" count="4" type="stmt"/>
+        <line num="140" count="4" type="stmt"/>
+        <line num="146" count="10" type="stmt"/>
+        <line num="177" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.core">
+      <metrics statements="83" coveredstatements="82" conditionals="55" coveredconditionals="52" methods="20" coveredmethods="20"/>
       <file name="geometry.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/core/geometry.ts">
-        <metrics statements="18" coveredstatements="18" conditionals="5" coveredconditionals="5" methods="4" coveredmethods="4"/>
-        <line num="14" count="85" type="stmt"/>
-        <line num="15" count="85" type="stmt"/>
-        <line num="35" count="22" type="stmt"/>
-        <line num="37" count="22" type="cond" truecount="2" falsecount="0"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
-        <line num="47" count="19" type="stmt"/>
-        <line num="48" count="19" type="stmt"/>
-        <line num="49" count="19" type="cond" truecount="2" falsecount="0"/>
-        <line num="51" count="19" type="stmt"/>
-        <line num="71" count="17" type="stmt"/>
-        <line num="72" count="17" type="stmt"/>
-        <line num="73" count="17" type="stmt"/>
-        <line num="88" count="17" type="stmt"/>
-        <line num="89" count="17" type="stmt"/>
-        <line num="90" count="17" type="stmt"/>
-        <line num="91" count="17" type="stmt"/>
+        <metrics statements="26" coveredstatements="26" conditionals="16" coveredconditionals="16" methods="5" coveredmethods="5"/>
+        <line num="14" count="682" type="stmt"/>
+        <line num="15" count="682" type="stmt"/>
+        <line num="35" count="171" type="stmt"/>
+        <line num="37" count="171" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="10" type="stmt"/>
+        <line num="39" count="10" type="stmt"/>
+        <line num="40" count="10" type="stmt"/>
+        <line num="47" count="161" type="stmt"/>
+        <line num="48" count="161" type="stmt"/>
+        <line num="49" count="161" type="cond" truecount="2" falsecount="0"/>
+        <line num="51" count="161" type="stmt"/>
+        <line num="71" count="167" type="stmt"/>
+        <line num="72" count="167" type="stmt"/>
+        <line num="75" count="167" type="cond" truecount="4" falsecount="0"/>
+        <line num="76" count="167" type="stmt"/>
+        <line num="91" count="166" type="stmt"/>
+        <line num="92" count="166" type="stmt"/>
+        <line num="93" count="166" type="stmt"/>
+        <line num="94" count="166" type="stmt"/>
+        <line num="112" count="425" type="stmt"/>
+        <line num="114" count="425" type="cond" truecount="2" falsecount="0"/>
+        <line num="116" count="425" type="stmt"/>
+        <line num="117" count="1009" type="stmt"/>
+        <line num="118" count="1009" type="cond" truecount="2" falsecount="0"/>
+        <line num="123" count="418" type="stmt"/>
+        <line num="128" count="7" type="stmt"/>
+      </file>
+      <file name="physics.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/core/physics.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="30" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="7" type="stmt"/>
       </file>
       <file name="segments.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/core/segments.ts">
         <metrics statements="19" coveredstatements="19" conditionals="12" coveredconditionals="10" methods="5" coveredmethods="5"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="32" count="42" type="cond" truecount="2" falsecount="0"/>
-        <line num="33" count="13" type="stmt"/>
-        <line num="35" count="13" type="stmt"/>
-        <line num="36" count="42" type="cond" truecount="2" falsecount="0"/>
-        <line num="37" count="42" type="stmt"/>
-        <line num="38" count="42" type="stmt"/>
-        <line num="39" count="42" type="stmt"/>
-        <line num="40" count="42" type="stmt"/>
-        <line num="41" count="42" type="stmt"/>
-        <line num="60" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="62" count="4" type="stmt"/>
-        <line num="63" count="15" type="stmt"/>
-        <line num="64" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="32" count="196" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="57" type="stmt"/>
+        <line num="35" count="57" type="stmt"/>
+        <line num="36" count="196" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="196" type="stmt"/>
+        <line num="38" count="196" type="stmt"/>
+        <line num="39" count="196" type="stmt"/>
+        <line num="40" count="196" type="stmt"/>
+        <line num="41" count="196" type="stmt"/>
+        <line num="60" count="46" type="cond" truecount="1" falsecount="1"/>
+        <line num="62" count="46" type="stmt"/>
+        <line num="63" count="164" type="stmt"/>
+        <line num="64" count="164" type="cond" truecount="2" falsecount="0"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="69" count="14" type="stmt"/>
-        <line num="70" count="14" type="cond" truecount="2" falsecount="1"/>
-        <line num="72" count="14" type="stmt"/>
+        <line num="69" count="163" type="stmt"/>
+        <line num="70" count="163" type="cond" truecount="2" falsecount="1"/>
+        <line num="72" count="163" type="stmt"/>
       </file>
       <file name="winner.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/core/winner.ts">
-        <metrics statements="35" coveredstatements="30" conditionals="21" coveredconditionals="18" methods="8" coveredmethods="8"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="8" count="4451" type="stmt"/>
-        <line num="9" count="2152" type="cond" truecount="2" falsecount="0"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="12" count="2150" type="stmt"/>
-        <line num="13" count="2150" type="stmt"/>
-        <line num="14" count="2150" type="cond" truecount="1" falsecount="1"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="17" count="2150" type="stmt"/>
-        <line num="25" count="34351" type="stmt"/>
-        <line num="26" count="12152" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="30" count="12150" type="stmt"/>
-        <line num="31" count="34250" type="cond" truecount="2" falsecount="0"/>
-        <line num="34" count="12150" type="stmt"/>
-        <line num="35" count="12150" type="stmt"/>
-        <line num="37" count="12150" type="stmt"/>
-        <line num="38" count="26645" type="cond" truecount="2" falsecount="0"/>
-        <line num="39" count="26645" type="cond" truecount="2" falsecount="0"/>
-        <line num="40" count="12150" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="47" count="0" type="stmt"/>
+        <metrics statements="35" coveredstatements="34" conditionals="21" coveredconditionals="20" methods="8" coveredmethods="8"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="8" count="4464" type="stmt"/>
+        <line num="9" count="2157" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="14" count="2154" type="stmt"/>
+        <line num="15" count="2154" type="stmt"/>
+        <line num="16" count="2154" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="2153" type="stmt"/>
+        <line num="27" count="34357" type="stmt"/>
+        <line num="28" count="12154" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="12152" type="stmt"/>
+        <line num="33" count="34256" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="12152" type="stmt"/>
+        <line num="37" count="12152" type="stmt"/>
+        <line num="39" count="12152" type="stmt"/>
+        <line num="40" count="26543" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="26543" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="12151" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="49" count="0" type="stmt"/>
-        <line num="57" count="9" type="stmt"/>
-        <line num="58" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="59" count="2" type="stmt"/>
-        <line num="61" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="66" count="2" type="stmt"/>
-        <line num="89" count="47" type="stmt"/>
-        <line num="90" count="47" type="stmt"/>
-        <line num="91" count="47" type="stmt"/>
-        <line num="93" count="47" type="cond" truecount="2" falsecount="0"/>
-        <line num="94" count="47" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="59" count="14" type="stmt"/>
+        <line num="60" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="63" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
+        <line num="89" count="57" type="stmt"/>
+        <line num="90" count="57" type="stmt"/>
+        <line num="91" count="57" type="stmt"/>
+        <line num="93" count="57" type="cond" truecount="2" falsecount="0"/>
+        <line num="94" count="57" type="stmt"/>
       </file>
     </package>
-    <package name="utils">
-      <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
+    <package name="src.hooks">
+      <metrics statements="147" coveredstatements="139" conditionals="49" coveredconditionals="34" methods="43" coveredmethods="38"/>
+      <file name="useSegments.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/hooks/useSegments.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="17" count="50" type="stmt"/>
+        <line num="18" count="44" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="42" type="stmt"/>
+        <line num="20" count="42" type="stmt"/>
+      </file>
+      <file name="useWheel.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/hooks/useWheel.ts">
+        <metrics statements="65" coveredstatements="63" conditionals="29" coveredconditionals="23" methods="18" coveredmethods="17"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="81" count="37" type="stmt"/>
+        <line num="83" count="37" type="stmt"/>
+        <line num="84" count="37" type="stmt"/>
+        <line num="85" count="37" type="stmt"/>
+        <line num="89" count="37" type="stmt"/>
+        <line num="90" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="95" count="37" type="stmt"/>
+        <line num="98" count="37" type="stmt"/>
+        <line num="99" count="30" type="stmt"/>
+        <line num="102" count="37" type="stmt"/>
+        <line num="103" count="37" type="stmt"/>
+        <line num="106" count="37" type="stmt"/>
+        <line num="108" count="37" type="stmt"/>
+        <line num="109" count="6" type="stmt"/>
+        <line num="110" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="111" count="6" type="stmt"/>
+        <line num="113" count="6" type="stmt"/>
+        <line num="114" count="6" type="stmt"/>
+        <line num="115" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="116" count="4" type="stmt"/>
+        <line num="121" count="37" type="stmt"/>
+        <line num="123" count="2" type="stmt"/>
+        <line num="124" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="129" count="37" type="stmt"/>
+        <line num="131" count="2" type="stmt"/>
+        <line num="132" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="137" count="37" type="stmt"/>
+        <line num="148" count="37" type="stmt"/>
+        <line num="150" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="153" count="7" type="stmt"/>
+        <line num="154" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="155" count="2" type="stmt"/>
+        <line num="156" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="157" count="1" type="stmt"/>
+        <line num="159" count="4" type="stmt"/>
+        <line num="162" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="163" count="1" type="stmt"/>
+        <line num="165" count="1" type="stmt"/>
+        <line num="168" count="17" type="stmt"/>
+        <line num="169" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="171" count="6" type="stmt"/>
+        <line num="172" count="6" type="stmt"/>
+        <line num="173" count="6" type="stmt"/>
+        <line num="190" count="37" type="stmt"/>
+        <line num="192" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="193" count="0" type="stmt"/>
+        <line num="198" count="37" type="stmt"/>
+        <line num="208" count="37" type="stmt"/>
+        <line num="210" count="31" type="stmt"/>
+        <line num="211" count="6" type="stmt"/>
+        <line num="212" count="1" type="stmt"/>
+        <line num="214" count="1" type="stmt"/>
+        <line num="215" count="1" type="stmt"/>
+        <line num="216" count="1" type="stmt"/>
+        <line num="217" count="1" type="stmt"/>
+        <line num="218" count="1" type="stmt"/>
+        <line num="221" count="1" type="stmt"/>
+        <line num="222" count="1" type="stmt"/>
+        <line num="223" count="1" type="stmt"/>
+        <line num="226" count="1" type="stmt"/>
+        <line num="228" count="1" type="stmt"/>
+        <line num="241" count="37" type="stmt"/>
+      </file>
+      <file name="useWheelAnimation.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/hooks/useWheelAnimation.ts">
+        <metrics statements="40" coveredstatements="34" conditionals="8" coveredconditionals="2" methods="16" coveredmethods="12"/>
+        <line num="46" count="42" type="stmt"/>
+        <line num="48" count="42" type="stmt"/>
+        <line num="51" count="42" type="stmt"/>
+        <line num="52" count="42" type="stmt"/>
+        <line num="53" count="42" type="stmt"/>
+        <line num="54" count="42" type="stmt"/>
+        <line num="55" count="35" type="stmt"/>
+        <line num="57" count="42" type="stmt"/>
+        <line num="58" count="37" type="stmt"/>
+        <line num="60" count="42" type="stmt"/>
+        <line num="61" count="37" type="stmt"/>
+        <line num="64" count="42" type="stmt"/>
+        <line num="65" count="8" type="stmt"/>
+        <line num="68" count="42" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="72" count="42" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="76" count="42" type="stmt"/>
+        <line num="78" count="7" type="stmt"/>
+        <line num="79" count="7" type="stmt"/>
+        <line num="84" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="85" count="7" type="stmt"/>
+        <line num="94" count="42" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="104" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="113" count="42" type="stmt"/>
+        <line num="114" count="3" type="stmt"/>
+        <line num="117" count="42" type="stmt"/>
+        <line num="118" count="2" type="stmt"/>
+        <line num="119" count="2" type="stmt"/>
+        <line num="123" count="42" type="stmt"/>
+        <line num="124" count="42" type="stmt"/>
+        <line num="127" count="42" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="130" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="138" count="42" type="stmt"/>
+      </file>
+      <file name="useWheelGesture.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/hooks/useWheelGesture.ts">
+        <metrics statements="27" coveredstatements="27" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <line num="32" count="38" type="stmt"/>
+        <line num="35" count="38" type="stmt"/>
+        <line num="37" count="38" type="stmt"/>
+        <line num="39" count="38" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="56" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="57" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="66" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="79" count="38" type="stmt"/>
+      </file>
+      <file name="useWheelState.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/hooks/useWheelState.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="18" count="77" type="stmt"/>
+        <line num="20" count="77" type="stmt"/>
+        <line num="21" count="41" type="stmt"/>
+        <line num="22" count="41" type="stmt"/>
+        <line num="23" count="41" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="31" count="35" type="stmt"/>
+        <line num="35" count="77" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.themes">
+      <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/themes/index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="23" count="37" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
+      <file name="image.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/utils/image.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="4" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="12" count="18" type="stmt"/>
+      </file>
       <file name="math.ts" path="/Users/vinhng/Documents/SelftTaught/ReactNative/react-native-wheel/src/utils/math.ts">
-        <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="11" count="85" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="7" count="19" type="stmt"/>
+        <line num="11" count="697" type="stmt"/>
+        <line num="15" count="14" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
       </file>
     </package>
   </project>

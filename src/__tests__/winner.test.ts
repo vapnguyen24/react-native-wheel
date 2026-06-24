@@ -1,4 +1,4 @@
-import { describe, expect, it } from '@jest/globals';
+import { describe, expect, it, jest, afterEach } from '@jest/globals';
 
 import {
   calculateTargetRotation,
@@ -71,6 +71,16 @@ describe('selectRandomWinner', () => {
     expect((counts.a ?? 0) / 2000).toBeGreaterThan(0.4);
     expect((counts.a ?? 0) / 2000).toBeLessThan(0.6);
   });
+
+  it('hits the defensive "index out of range" guard when Math.random returns 1.0', () => {
+    // Math.random should never return 1.0 in practice, but the guard exists
+    // to satisfy noUncheckedIndexedAccess. Force it via spy.
+    jest.spyOn(Math, 'random').mockReturnValueOnce(1.0 as number);
+    // With length=1, Math.floor(1.0*1)=1, eligible[1]=undefined → throws
+    expect(() => selectRandomWinner([item('solo')])).toThrow(
+      'index out of range'
+    );
+  });
 });
 
 // ─── selectWeightedWinner ─────────────────────────────────────────────────────
@@ -133,6 +143,20 @@ describe('selectWeightedWinner', () => {
     expect(freqB).toBeLessThan(2 / 6 + 0.05);
     expect(freqC).toBeGreaterThan(3 / 6 - 0.05);
     expect(freqC).toBeLessThan(3 / 6 + 0.05);
+  });
+
+  it('hits the floating-point fallback when rand equals totalWeight', () => {
+    // Math.random returns 1.0 → rand=1.0*totalWeight → loop never satisfies rand<cumulative
+    // → falls through to the last-item return path (lines 47-51)
+    jest.spyOn(Math, 'random').mockReturnValueOnce(1.0 as number);
+    const items = [item('a', { weight: 1 }), item('b', { weight: 1 })];
+    // rand = 2.0, cumulative maxes at 2.0, condition 2.0 < 2.0 is false → returns last
+    const winner = selectWeightedWinner(items);
+    expect(winner.id).toBe('b');
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
   it('treats missing weight as 1 (equal to explicitly set weight=1)', () => {

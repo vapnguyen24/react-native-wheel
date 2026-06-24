@@ -157,9 +157,27 @@
         "react-native-wheel-source"
       ]
     },
+    "testPathIgnorePatterns": [
+      "<rootDir>/src/__tests__/__mocks__/"
+    ],
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?|react-native-reanimated)/)"
+    ],
+    "moduleNameMapper": {
+      "^react-native-reanimated$": "<rootDir>/node_modules/react-native-reanimated/mock.js",
+      "^react-native-worklets$": "<rootDir>/src/__tests__/__mocks__/react-native-worklets.js",
+      "^react-native-svg$": "<rootDir>/src/__tests__/__mocks__/react-native-svg.js",
+      "^react-native-gesture-handler$": "<rootDir>/src/__tests__/__mocks__/react-native-gesture-handler.js",
+      "^@shopify/react-native-skia$": "<rootDir>/src/__tests__/__mocks__/@shopify/react-native-skia.js"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/__tests__/**",
+      "!src/types.ts"
     ]
   },
   "commitlint": {

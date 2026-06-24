@@ -504,7 +504,7 @@ Show current winner label below the wheel in each screen.
 
 ---
 
-## Phase 11 — Testing (L)
+## Phase 11 — Testing (L) [COMPLETED]
 
 **Goal:** 90%+ coverage, all correctness properties verified.
 
