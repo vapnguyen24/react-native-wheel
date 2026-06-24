@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.6](https://github.com/vapnguyen24/react-native-wheel/compare/v1.1.5...v1.1.6) (2026-06-24)
+
 ## [1.1.5](https://github.com/vapnguyen24/react-native-wheel/compare/v1.1.4...v1.1.5) (2026-06-24)
 
 ### Changed
