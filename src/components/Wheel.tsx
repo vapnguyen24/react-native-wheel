@@ -1,11 +1,19 @@
-import React, { useCallback, useImperativeHandle, useRef } from 'react';
+import React, {
+  useCallback,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+} from 'react';
 import { AccessibilityInfo, View } from 'react-native';
 
 import type { WheelItem, WheelProps, WheelRef } from '../types';
+import { resolveTheme } from '../themes';
 import { useWheel } from '../hooks/useWheel';
 import { WheelSVG } from './WheelSVG';
 import type { WheelSVGProps } from './WheelSVG';
 import type { WheelSkiaProps } from './WheelSkia';
+import { Pointer } from './Pointer';
+import { CenterDot } from './CenterDot';
 
 const DEFAULT_SIZE = 320;
 
@@ -30,10 +38,15 @@ export const Wheel = React.memo(
         renderCenter,
         renderLabel,
         renderSlice,
-        theme: _theme,
+        theme,
         onSpinEnd,
         ...wheelOptions
       } = props;
+
+      const resolvedTheme = useMemo(
+        () => resolveTheme(theme ?? 'light'),
+        [theme]
+      );
 
       // Announce winner for VoiceOver / TalkBack before calling consumer callback
       const handleSpinEnd = useCallback(
@@ -51,6 +64,7 @@ export const Wheel = React.memo(
       const { rotation, segmentLayouts, gesture, state, cx, cy } = useWheel({
         ...wheelOptions,
         size,
+        theme,
         onSpinEnd: handleSpinEnd,
         ref: internalRef,
       });
@@ -74,6 +88,27 @@ export const Wheel = React.memo(
         internalRef.current?.spin();
       }, []);
 
+      // Inject themed defaults when the consumer doesn't provide custom render slots.
+      const effectiveRenderPointer = useCallback(
+        () =>
+          renderPointer != null ? (
+            renderPointer()
+          ) : (
+            <Pointer size={size} color={resolvedTheme.pointer} />
+          ),
+        [renderPointer, size, resolvedTheme.pointer]
+      );
+
+      const effectiveRenderCenter = useCallback(
+        () =>
+          renderCenter != null ? (
+            renderCenter()
+          ) : (
+            <CenterDot cx={cx} cy={cy} color={resolvedTheme.background} />
+          ),
+        [renderCenter, cx, cy, resolvedTheme.background]
+      );
+
       const rendererProps: WheelSVGProps = {
         rotation,
         segmentLayouts,
@@ -81,8 +116,8 @@ export const Wheel = React.memo(
         size,
         cx,
         cy,
-        renderPointer,
-        renderCenter,
+        renderPointer: effectiveRenderPointer,
+        renderCenter: effectiveRenderCenter,
         renderLabel,
         renderSlice,
       };

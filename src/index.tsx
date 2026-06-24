@@ -1,4 +1,5 @@
 export { Wheel } from './components/Wheel';
+export { lightTheme, darkTheme, resolveTheme } from './themes';
 
 export type {
   ImagePosition,

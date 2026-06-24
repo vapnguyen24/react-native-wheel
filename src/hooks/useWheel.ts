@@ -2,6 +2,7 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
+  useMemo,
   useRef,
   useState,
   type ForwardedRef,
@@ -16,7 +17,14 @@ import {
   selectWeightedWinner,
 } from '../core/winner';
 import type { PhysicsConfig } from '../core/physics';
-import type { SegmentLayout, WheelItem, WheelRef, WheelState } from '../types';
+import type {
+  SegmentLayout,
+  ThemeConfig,
+  WheelItem,
+  WheelRef,
+  WheelState,
+} from '../types';
+import { resolveTheme } from '../themes';
 import { useSegments } from './useSegments';
 import { useWheelAnimation } from './useWheelAnimation';
 import { useWheelGesture } from './useWheelGesture';
@@ -33,6 +41,7 @@ export interface UseWheelOptions {
   controlledWinnerId?: string;
   duration?: number;
   removeWinnerOnSelect?: boolean;
+  theme?: 'light' | 'dark' | ThemeConfig;
   onSpinStart?: () => void;
   onSpinEnd?: (winner: WheelItem) => void;
   onTick?: (item: WheelItem) => void;
@@ -60,6 +69,7 @@ export function useWheel(options: UseWheelOptions): UseWheelResult {
     controlledWinnerId,
     duration = DEFAULT_DURATION,
     removeWinnerOnSelect = false,
+    theme,
     onSpinStart,
     onSpinEnd,
     onTick,
@@ -72,6 +82,13 @@ export function useWheel(options: UseWheelOptions): UseWheelResult {
   const cy = size / 2;
   const r = size / 2;
 
+  // Resolve palette once per theme change — stable for string themes ('light'/'dark')
+  // since resolveTheme returns module-level constants.
+  const palette = useMemo(
+    () => (theme != null ? resolveTheme(theme).palette : undefined),
+    [theme]
+  );
+
   // currentData starts from data; items may be removed via removeWinnerOnSelect
   const [currentData, setCurrentData] = useState<WheelItem[]>(data);
 
@@ -80,7 +97,7 @@ export function useWheel(options: UseWheelOptions): UseWheelResult {
     setCurrentData(data);
   }, [data]);
 
-  const segmentLayouts = useSegments(currentData, cx, cy, r);
+  const segmentLayouts = useSegments(currentData, cx, cy, r, palette);
   const { state, transitionTo } = useWheelState();
 
   // Holds the winner chosen at spin-start, consumed when animation finishes
