@@ -1,17 +1,15 @@
-# rn-wheel
+# rn-wheel — React Native Wheel of Fortune Spinner
+
+A high-performance, fully customizable **Wheel of Fortune / Spinning Wheel** component for React Native (iOS, Android, Web). Powered by `react-native-reanimated` for 60 fps UI-thread animations and `react-native-svg`, with optional `@shopify/react-native-skia` GPU rendering.
 
 [![npm version](https://img.shields.io/npm/v/rn-wheel.svg)](https://www.npmjs.com/package/rn-wheel)
 [![CI](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml/badge.svg)](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![coverage](https://img.shields.io/badge/coverage-90%25-brightgreen)](https://github.com/vapnguyen24/react-native-wheel/actions)
 
-<!-- TODO: replace with actual demo GIF -->
-![Demo](https://via.placeholder.com/600x300/1a1a2e/ffffff?text=Demo+GIF+coming+soon)
+<video src="assets/short-demo.mp4" autoplay loop muted playsinline width="600"></video>
 
-<!-- TODO: replace with actual video link -->
-> 🎬 **[Watch full demo video](https://github.com/vapnguyen24/react-native-wheel)**
-
-A high-performance, deterministic **Wheel of Fortune** component for React Native, powered by `react-native-reanimated` and `react-native-svg` (with optional `@shopify/react-native-skia` support).
+> Full demo: [assets/full-demo.mp4](assets/full-demo.mp4)
 
 ---
 
@@ -209,3 +207,7 @@ MIT
 ---
 
 Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+
+---
+
+**Keywords:** react native wheel, react native spinner, wheel of fortune react native, rn-wheel, spinning wheel component, react native fortune wheel, reanimated wheel, react native prize wheel, react native random picker

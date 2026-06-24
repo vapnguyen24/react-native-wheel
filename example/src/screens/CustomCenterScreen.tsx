@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Wheel } from 'rn-wheel';
 import type { WheelItem, WheelRef } from 'rn-wheel';
@@ -24,39 +24,40 @@ export function CustomCenterScreen() {
   const wheelRef = useRef<WheelRef>(null);
   const [winner, setWinner] = useState<string | null>(null);
 
-  // renderCenter replaces the default CenterDot with a tappable SPIN button.
-  // wheelRef is stable across renders so capturing it in [] deps is safe.
-  const renderCenter = useCallback(
-    () => (
-      <TouchableOpacity
-        onPress={() => wheelRef.current?.spin()}
-        style={[
-          styles.centerButton,
-          {
-            top: CENTER - BUTTON_SIZE / 2,
-            left: CENTER - BUTTON_SIZE / 2,
-          },
-        ]}
-        activeOpacity={0.8}
-      >
-        <Text style={styles.centerText}>SPIN</Text>
-      </TouchableOpacity>
-    ),
-    []
-  );
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Custom Center</Text>
       <Text style={styles.subtitle}>Tap the center button to spin</Text>
-      <Wheel
-        ref={wheelRef}
-        data={DATA}
-        size={WHEEL_SIZE}
-        renderCenter={renderCenter}
-        onSpinEnd={(item) => setWinner(item.label)}
-        renderer="skia"
-      />
+
+      {/*
+        The SPIN button is a sibling of <Wheel> inside the wrapper View,
+        NOT passed via renderCenter. On Android, the Skia Canvas can interfere
+        with React Native Views rendered inside its component tree. Positioning
+        the overlay OUTSIDE the Wheel component avoids that issue entirely.
+      */}
+      <View style={styles.wheelWrapper}>
+        <Wheel
+          ref={wheelRef}
+          data={DATA}
+          size={WHEEL_SIZE}
+          renderer="skia"
+          onSpinEnd={(item) => setWinner(item.label)}
+        />
+        <TouchableOpacity
+          onPress={() => wheelRef.current?.spin()}
+          style={[
+            styles.centerButton,
+            {
+              top: CENTER - BUTTON_SIZE / 2,
+              left: CENTER - BUTTON_SIZE / 2,
+            },
+          ]}
+          activeOpacity={0.8}
+        >
+          <Text style={styles.centerText}>SPIN</Text>
+        </TouchableOpacity>
+      </View>
+
       <View style={styles.resultArea}>
         {winner != null && <Text style={styles.winner}>{winner}</Text>}
       </View>
@@ -81,6 +82,10 @@ const styles = StyleSheet.create({
     color: '#888',
     marginTop: -8,
   },
+  wheelWrapper: {
+    width: WHEEL_SIZE,
+    height: WHEEL_SIZE,
+  },
   centerButton: {
     position: 'absolute',
     width: BUTTON_SIZE,
@@ -98,7 +103,7 @@ const styles = StyleSheet.create({
   },
   centerText: {
     color: '#fff',
-    fontWeight: '800',
+    fontWeight: 'bold',
     fontSize: 13,
     letterSpacing: 1,
   },

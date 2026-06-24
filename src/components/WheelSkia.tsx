@@ -131,9 +131,10 @@ export const WheelSkia = React.memo(function WheelSkiaComponent({
     { rotate: rotation.value * (Math.PI / 180) },
   ]);
 
-  // matchFont returns a synchronous system font; memoised to avoid churn.
+  // 'System' (the matchFont default) is iOS-only; 'sans-serif' resolves on both platforms.
   const font = useMemo(
-    () => matchFont({ fontSize: 14, fontWeight: 'bold' }),
+    () =>
+      matchFont({ fontSize: 14, fontWeight: 'bold', fontFamily: 'sans-serif' }),
     []
   );
 
