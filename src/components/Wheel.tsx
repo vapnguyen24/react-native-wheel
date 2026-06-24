@@ -116,6 +116,7 @@ export const Wheel = React.memo(
         size,
         cx,
         cy,
+        borderColor: resolvedTheme.border,
         renderPointer: effectiveRenderPointer,
         renderCenter: effectiveRenderCenter,
         renderLabel,

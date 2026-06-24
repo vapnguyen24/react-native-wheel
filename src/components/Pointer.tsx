@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   wrapper: {
     alignItems: 'center',
     position: 'absolute',
-    top: 12,
+    top: 16,
     left: 0,
     zIndex: 10,
   },

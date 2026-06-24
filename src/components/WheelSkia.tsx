@@ -95,6 +95,8 @@ const SkiaSectorSlice = React.memo(function SkiaSectorSliceComponent({
 
 // ─── WheelSkia ────────────────────────────────────────────────────────────────
 
+const BORDER_WIDTH = 8;
+
 export interface WheelSkiaProps {
   rotation: SharedValue<number>;
   segmentLayouts: SegmentLayout[];
@@ -102,6 +104,7 @@ export interface WheelSkiaProps {
   size: number;
   cx: number;
   cy: number;
+  borderColor?: string;
   renderPointer?: () => React.ReactNode;
   renderCenter?: () => React.ReactNode;
   /** Not used in the Skia renderer; Skia renders its own text. */
@@ -116,6 +119,7 @@ export const WheelSkia = React.memo(function WheelSkiaComponent({
   size,
   cx,
   cy,
+  borderColor,
   renderPointer,
   renderCenter,
   renderLabel: _renderLabel,
@@ -154,6 +158,18 @@ export const WheelSkia = React.memo(function WheelSkiaComponent({
       {/* Non-rotating overlays — identical to WheelSVG */}
       {renderPointer != null ? renderPointer() : <Pointer size={size} />}
       {renderCenter != null ? renderCenter() : <CenterDot cx={cx} cy={cy} />}
+
+      {/* Outer border ring — sits on top, does not rotate */}
+      {borderColor != null && (
+        <View
+          pointerEvents="none"
+          style={[
+            StyleSheet.absoluteFill,
+            styles.ring,
+            { borderColor, borderRadius: size / 2 },
+          ]}
+        />
+      )}
     </View>
   );
 });
@@ -161,5 +177,8 @@ export const WheelSkia = React.memo(function WheelSkiaComponent({
 const styles = StyleSheet.create({
   container: {
     overflow: 'visible',
+  },
+  ring: {
+    borderWidth: BORDER_WIDTH,
   },
 });

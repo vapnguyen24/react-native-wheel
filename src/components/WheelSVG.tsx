@@ -11,6 +11,8 @@ import { CenterDot } from './CenterDot';
 import { Pointer } from './Pointer';
 import { SectorSlice } from './SectorSlice';
 
+const BORDER_WIDTH = 8;
+
 export interface WheelSVGProps {
   rotation: SharedValue<number>;
   segmentLayouts: SegmentLayout[];
@@ -18,6 +20,7 @@ export interface WheelSVGProps {
   size: number;
   cx: number;
   cy: number;
+  borderColor?: string;
   renderPointer?: () => React.ReactNode;
   renderCenter?: () => React.ReactNode;
   renderLabel?: (item: WheelItem, index: number) => React.ReactNode;
@@ -31,6 +34,7 @@ export const WheelSVG = React.memo(function WheelSVGComponent({
   size,
   cx,
   cy,
+  borderColor,
   renderPointer,
   renderCenter,
   renderLabel,
@@ -64,6 +68,18 @@ export const WheelSVG = React.memo(function WheelSVGComponent({
       {/* Non-rotating overlays */}
       {renderPointer != null ? renderPointer() : <Pointer size={size} />}
       {renderCenter != null ? renderCenter() : <CenterDot cx={cx} cy={cy} />}
+
+      {/* Outer border ring — sits on top, does not rotate */}
+      {borderColor != null && (
+        <View
+          pointerEvents="none"
+          style={[
+            StyleSheet.absoluteFill,
+            styles.ring,
+            { borderColor, borderRadius: size / 2 },
+          ]}
+        />
+      )}
     </View>
   );
 });
@@ -71,5 +87,8 @@ export const WheelSVG = React.memo(function WheelSVGComponent({
 const styles = StyleSheet.create({
   container: {
     overflow: 'visible',
+  },
+  ring: {
+    borderWidth: BORDER_WIDTH,
   },
 });
