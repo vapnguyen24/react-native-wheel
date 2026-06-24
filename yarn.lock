@@ -4112,9 +4112,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vap/react-native-wheel@workspace:.":
+"@vapng/react-native-wheel@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@vap/react-native-wheel@workspace:."
+  resolution: "@vapng/react-native-wheel@workspace:."
   dependencies:
     "@babel/core": "npm:^7.28.4"
     "@commitlint/config-conventional": "npm:^21.0.2"

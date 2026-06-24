@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Wheel } from '@vap/react-native-wheel';
-import type { WheelItem, WheelRef } from '@vap/react-native-wheel';
+import { Wheel } from '@vapng/react-native-wheel';
+import type { WheelItem, WheelRef } from '@vapng/react-native-wheel';
 
 const DATA: WheelItem[] = [
   { id: '1', label: 'Red', color: '#E8413E' },

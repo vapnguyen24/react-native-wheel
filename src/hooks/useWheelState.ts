@@ -23,7 +23,7 @@ export function useWheelState(): UseWheelStateResult {
       if (!allowed.includes(next)) {
         if (__DEV__) {
           console.warn(
-            `[@vap/react-native-wheel] Invalid state transition: ${current} → ${next}`
+            `[@vapng/react-native-wheel] Invalid state transition: ${current} → ${next}`
           );
         }
         return current;

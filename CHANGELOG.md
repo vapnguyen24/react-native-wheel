@@ -6,6 +6,6 @@
 
 ### Changed
 
-* rename package to @vap/react-native-wheel ([222e7ee](https://github.com/vapnguyen24/react-native-wheel/commit/222e7ee92ad90cae05796c0a9247c48107458a23))
+* rename package to @vapng/react-native-wheel ([222e7ee](https://github.com/vapnguyen24/react-native-wheel/commit/222e7ee92ad90cae05796c0a9247c48107458a23))
 
 ## [1.1.4](https://github.com/vapnguyen24/react-native-wheel/compare/v1.1.3...v1.1.4) (2026-06-24)

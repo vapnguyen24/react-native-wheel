@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "@vap/react-native-wheel": ["./src/index"]
+      "@vapng/react-native-wheel": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
