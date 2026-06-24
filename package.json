@@ -178,7 +178,14 @@
       "src/**/*.{ts,tsx}",
       "!src/__tests__/**",
       "!src/types.ts"
-    ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90,
+        "functions": 90,
+        "branches": 85
+      }
+    }
   },
   "commitlint": {
     "extends": [

@@ -548,14 +548,14 @@ Mock Gesture Handler: use official RNGH mock setup.
 
 ---
 
-## Phase 12 — CI/CD (S)
+## Phase 12 — CI/CD (S) [COMPLETED]
 
 **Goal:** All GitHub Actions pass on every PR.
 
 ### 12.1 — Update `.github/workflows/ci.yml`
 
 Current CI already has: lint, typecheck, test, build-library, build-android, build-ios.
-Verify the test step runs with coverage: `yarn test --coverage --coverageThreshold='{"global":{"lines":90}}'`
+Verify the test step runs with coverage: `yarn test --coverage`
 
 ### 12.2 — Add coverage enforcement
 
