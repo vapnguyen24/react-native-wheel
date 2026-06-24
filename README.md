@@ -204,6 +204,12 @@ const wheelRef = useRef<WheelRef>(null);
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
+## Sponsor
+
+If this library saves you time, consider buying me a coffee ☕
+
+<a href='https://ko-fi.com/E2P41ZJ1W8' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 ## License
 
 MIT
