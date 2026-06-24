@@ -26,6 +26,7 @@ export function velocityToAngularVelocity(
   panVelocity: number,
   radius: number
 ): number {
+  'worklet';
   if (radius <= 0) return 0;
   return (panVelocity / radius) * (180 / Math.PI);
 }

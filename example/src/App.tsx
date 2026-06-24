@@ -74,7 +74,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1 },
+  root: { flex: 1, paddingTop: 24 },
   tabBar: {
     borderBottomWidth: 1,
     borderBottomColor: '#E0E0E0',

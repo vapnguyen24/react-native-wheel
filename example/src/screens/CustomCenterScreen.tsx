@@ -9,6 +9,11 @@ const DATA: WheelItem[] = [
   { id: '3', label: 'Scissors', color: '#4BB543' },
   { id: '4', label: 'Lizard', color: '#F4A228' },
   { id: '5', label: 'Spock', color: '#7C4DFF' },
+  { id: '6', label: 'Rock', color: '#E8413E' },
+  { id: '7', label: 'Paper', color: '#3E7BFA' },
+  { id: '8', label: 'Scissors', color: '#4BB543' },
+  { id: '9', label: 'Lizard', color: '#F4A228' },
+  { id: '10', label: 'Spock', color: '#7C4DFF' },
 ];
 
 const WHEEL_SIZE = 300;
@@ -50,6 +55,7 @@ export function CustomCenterScreen() {
         size={WHEEL_SIZE}
         renderCenter={renderCenter}
         onSpinEnd={(item) => setWinner(item.label)}
+        renderer="skia"
       />
       <View style={styles.resultArea}>
         {winner != null && <Text style={styles.winner}>{winner}</Text>}
