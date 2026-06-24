@@ -70,7 +70,10 @@ export function calculateLabelPosition(
 ): LabelPosition {
   const midAngle = (startAngle + endAngle) / 2;
   const pos = polarToCartesian(cx, cy, r * radiusRatio, midAngle);
-  return { x: pos.x, y: pos.y, rotation: midAngle };
+  // Segments in the left half (90° ≤ midAngle < 270°) would render upside-down
+  // without a 180° flip — rotate so text always reads outward from centre.
+  const rotation = midAngle >= 90 && midAngle < 270 ? midAngle + 180 : midAngle;
+  return { x: pos.x, y: pos.y, rotation };
 }
 
 /**

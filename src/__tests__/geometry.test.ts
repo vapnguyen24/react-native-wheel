@@ -130,11 +130,18 @@ describe('calculateLabelPosition', () => {
     expect(result.rotation).toBeCloseTo(0);
   });
 
-  it('midAngle equals (startAngle + endAngle) / 2', () => {
+  it('midAngle equals (startAngle + endAngle) / 2 for right-half segments', () => {
     const start = 30;
     const end = 110;
     const result = calculateLabelPosition(0, 0, 100, start, end);
-    expect(result.rotation).toBeCloseTo((start + end) / 2);
+    // midAngle = 70°, which is < 90° so no flip
+    expect(result.rotation).toBeCloseTo(70);
+  });
+
+  it('adds 180° for left-half segments so text is never upside-down', () => {
+    // midAngle = (90 + 180) / 2 = 135° → in [90°, 270°) → rotation = 315°
+    const result = calculateLabelPosition(0, 0, 100, 90, 180);
+    expect(result.rotation).toBeCloseTo(315);
   });
 });
 
