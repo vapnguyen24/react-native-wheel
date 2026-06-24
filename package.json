@@ -206,8 +206,22 @@
     "plugins": {
       "@release-it/conventional-changelog": {
         "preset": {
-          "name": "angular"
-        }
+          "name": "conventionalcommits",
+          "types": [
+            { "type": "feat",     "section": "Added" },
+            { "type": "fix",      "section": "Fixed" },
+            { "type": "perf",     "section": "Changed" },
+            { "type": "refactor", "section": "Changed" },
+            { "type": "docs",     "section": "Changed" },
+            { "type": "chore",    "hidden": true },
+            { "type": "style",    "hidden": true },
+            { "type": "test",     "hidden": true },
+            { "type": "build",    "hidden": true },
+            { "type": "ci",       "hidden": true }
+          ]
+        },
+        "header": "# Changelog",
+        "infile": "CHANGELOG.md"
       }
     }
   },

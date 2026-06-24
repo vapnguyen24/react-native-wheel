@@ -46,8 +46,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Extract latest changelog
+        run: |
+          awk '/^## \[/{count++; if(count==2) exit} count==1{print}' CHANGELOG.md \
+            > /tmp/latest-changelog.md
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          generate_release_notes: true
+          body_path: /tmp/latest-changelog.md
           make_latest: true
