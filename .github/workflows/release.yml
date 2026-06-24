@@ -23,6 +23,12 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
+      - name: Setup Node with npm auth
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Lint
         run: yarn lint
 
@@ -36,6 +42,6 @@ jobs:
         run: yarn prepare
 
       - name: Publish to npm
-        run: yarn npm publish --access public
+        run: npm publish --access public
         env:
-          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
