@@ -1,9 +1,15 @@
 # react-native-wheel
 
-[![npm version](https://badge.fury.io/js/react-native-wheel.svg)](https://badge.fury.io/js/react-native-wheel)
-[![CI](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml/badge.svg)](https://github.com/vapnguyen24/react-native-wheel/actions)
+[![npm version](https://img.shields.io/npm/v/react-native-wheel.svg)](https://www.npmjs.com/package/react-native-wheel)
+[![CI](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml/badge.svg)](https://github.com/vapnguyen24/react-native-wheel/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![coverage](https://img.shields.io/badge/coverage-90%25-brightgreen)](https://github.com/vapnguyen24/react-native-wheel/actions)
+
+<!-- TODO: replace with actual demo GIF -->
+![Demo](https://via.placeholder.com/600x300/1a1a2e/ffffff?text=Demo+GIF+coming+soon)
+
+<!-- TODO: replace with actual video link -->
+> 🎬 **[Watch full demo video](https://github.com/vapnguyen24/react-native-wheel)**
 
 A high-performance, deterministic **Wheel of Fortune** component for React Native, powered by `react-native-reanimated` and `react-native-svg` (with optional `@shopify/react-native-skia` support).
 

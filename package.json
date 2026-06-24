@@ -1,6 +1,6 @@
 {
-  "name": "react-native-wheel",
-  "version": "0.1.0",
+  "name": "rn-wheel",
+  "version": "1.0.1",
   "description": "A customizable spinning wheel component for React Native",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -198,7 +198,7 @@
       "tagName": "v${version}"
     },
     "npm": {
-      "publish": true
+      "publish": false
     },
     "github": {
       "release": true
