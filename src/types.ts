@@ -115,6 +115,10 @@ export interface WheelProps {
   // Theme
   theme?: 'light' | 'dark' | ThemeConfig;
 
+  // Interaction
+  /** When true, touch/drag gestures are ignored. Programmatic spin() still works. */
+  disabled?: boolean;
+
   // Accessibility
   accessibilityLabel?: string;
 }

@@ -41,6 +41,7 @@ export interface UseWheelOptions {
   controlledWinnerId?: string;
   duration?: number;
   removeWinnerOnSelect?: boolean;
+  disabled?: boolean;
   theme?: 'light' | 'dark' | ThemeConfig;
   onSpinStart?: () => void;
   onSpinEnd?: (winner: WheelItem) => void;
@@ -69,6 +70,7 @@ export function useWheel(options: UseWheelOptions): UseWheelResult {
     controlledWinnerId,
     duration = DEFAULT_DURATION,
     removeWinnerOnSelect = false,
+    disabled = false,
     theme,
     onSpinStart,
     onSpinEnd,
@@ -196,7 +198,7 @@ export function useWheel(options: UseWheelOptions): UseWheelResult {
   const { gesture } = useWheelGesture({
     rotation,
     onGestureEnd: handleGestureEnd,
-    enabled: state === 'idle',
+    enabled: state === 'idle' && !disabled,
     radius: r,
     cx,
     cy,

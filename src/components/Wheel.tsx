@@ -33,6 +33,7 @@ export const Wheel = React.memo(
       const {
         renderer = 'svg',
         size = DEFAULT_SIZE,
+        disabled = false,
         accessibilityLabel,
         renderPointer,
         renderCenter,
@@ -64,6 +65,7 @@ export const Wheel = React.memo(
       const { rotation, segmentLayouts, gesture, state, cx, cy } = useWheel({
         ...wheelOptions,
         size,
+        disabled,
         theme,
         onSpinEnd: handleSpinEnd,
         ref: internalRef,
@@ -127,7 +129,7 @@ export const Wheel = React.memo(
         accessible: true as const,
         accessibilityRole: 'spinbutton' as const,
         accessibilityLabel: accessibilityLabel ?? 'Spin the wheel',
-        accessibilityState: { busy: state === 'spinning' },
+        accessibilityState: { busy: state === 'spinning', disabled },
         onAccessibilityActivate: handleAccessibilityActivate,
       };
 
