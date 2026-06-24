@@ -24,7 +24,7 @@ export interface WheelSVGProps {
   renderSlice?: (item: WheelItem, index: number) => React.ReactNode;
 }
 
-export const WheelSVG = React.memo(function WheelSVG({
+export const WheelSVG = React.memo(function WheelSVGComponent({
   rotation,
   segmentLayouts,
   gesture,

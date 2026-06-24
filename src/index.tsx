@@ -1,3 +1,5 @@
+export { Wheel } from './components/Wheel';
+
 export type {
   ImagePosition,
   LabelPosition,

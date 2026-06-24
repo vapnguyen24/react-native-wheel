@@ -20,7 +20,7 @@ export interface SectorSliceProps {
 const LABEL_FO_WIDTH = 80;
 const LABEL_FO_HEIGHT = 30;
 
-export const SectorSlice = React.memo(function SectorSlice({
+export const SectorSlice = React.memo(function SectorSliceComponent({
   layout,
   index,
   renderLabel,

@@ -9,7 +9,7 @@ export interface PointerProps {
 const POINTER_WIDTH = 16;
 const POINTER_HEIGHT = 22;
 
-export const Pointer = React.memo(function Pointer({
+export const Pointer = React.memo(function PointerComponent({
   size,
   color = '#E8413E',
 }: PointerProps) {

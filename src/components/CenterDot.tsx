@@ -10,7 +10,7 @@ export interface CenterDotProps {
 
 const DEFAULT_DOT_SIZE = 20;
 
-export const CenterDot = React.memo(function CenterDot({
+export const CenterDot = React.memo(function CenterDotComponent({
   cx,
   cy,
   color = '#FFFFFF',

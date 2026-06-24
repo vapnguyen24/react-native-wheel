@@ -52,7 +52,7 @@ interface SkiaSectorSliceProps {
   renderSlice?: (item: WheelItem, index: number) => React.ReactNode;
 }
 
-const SkiaSectorSlice = React.memo(function SkiaSectorSlice({
+const SkiaSectorSlice = React.memo(function SkiaSectorSliceComponent({
   layout,
   index,
   font,
@@ -109,7 +109,7 @@ export interface WheelSkiaProps {
   renderSlice?: (item: WheelItem, index: number) => React.ReactNode;
 }
 
-export const WheelSkia = React.memo(function WheelSkia({
+export const WheelSkia = React.memo(function WheelSkiaComponent({
   rotation,
   segmentLayouts,
   gesture,
