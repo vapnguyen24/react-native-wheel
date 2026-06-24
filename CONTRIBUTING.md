@@ -4,16 +4,25 @@ Contributions are always welcome, no matter how large or small!
 
 We want this community to be friendly and respectful to each other. Please follow it in all your interactions with the project. Before contributing, please read the [code of conduct](./CODE_OF_CONDUCT.md).
 
-## Development workflow
+## Local Dev Setup
 
 This project is a monorepo managed using [Yarn workspaces](https://yarnpkg.com/features/workspaces). It contains the following packages:
 
 - The library package in the root directory.
 - An example app in the `example/` directory.
 
-To get started with the project, make sure you have the correct version of [Node.js](https://nodejs.org/) installed. See the [`.nvmrc`](./.nvmrc) file for the version used in this project.
+**Prerequisites:**
 
-Run `yarn` in the root directory to install the required dependencies for each package:
+- [Node.js](https://nodejs.org/) — see [`.nvmrc`](./.nvmrc) for the exact version. We recommend using [`nvm`](https://github.com/nvm-sh/nvm):
+  ```sh
+  nvm use
+  ```
+- [Yarn 4](https://yarnpkg.com) — enabled via Corepack:
+  ```sh
+  corepack enable
+  ```
+
+**Install dependencies (root + example):**
 
 ```sh
 yarn
@@ -21,116 +30,143 @@ yarn
 
 > Since the project relies on Yarn workspaces, you cannot use [`npm`](https://github.com/npm/cli) for development without manually migrating.
 
-The [example app](/example/) demonstrates usage of the library. You need to run it to test any changes you make.
+---
 
-It is configured to use the local version of the library, so any changes you make to the library's source code will be reflected in the example app. Changes to the library's JavaScript code will be reflected in the example app without a rebuild, but native code changes will require a rebuild of the example app.
+## Running the Example App
 
-You can use various commands from the root directory to work with the project.
+The example app in `/example` demonstrates all library features. It is configured to use the local version of the library, so changes you make to the library's source code are reflected immediately (JS changes without rebuild; native changes require a rebuild).
 
-To start the packager:
+**Start the Metro bundler:**
 
 ```sh
 yarn example start
 ```
 
-To run the example app on Android:
+**Run on Android:**
 
 ```sh
 yarn example android
 ```
 
-To run the example app on iOS:
+**Run on iOS:**
 
 ```sh
 yarn example ios
 ```
 
-To confirm that the app is running with the new architecture, you can check the Metro logs for a message like this:
-
-```sh
-Running "WheelExample" with {"fabric":true,"initialProps":{"concurrentRoot":true},"rootTag":1}
-```
-
-Note the `"fabric":true` and `"concurrentRoot":true` properties.
-
-To run the example app on Web:
+**Run on Web:**
 
 ```sh
 yarn example web
 ```
 
-Make sure your code passes TypeScript:
+---
 
-```sh
-yarn typecheck
-```
+## Test Commands
 
-To check for linting errors, run the following:
-
-```sh
-yarn lint
-```
-
-To fix formatting errors, run the following:
-
-```sh
-yarn lint --fix
-```
-
-Remember to add tests for your change if possible. Run the unit tests by:
+**Run unit tests:**
 
 ```sh
 yarn test
 ```
 
-
-### Commit message convention
-
-We follow the [conventional commits specification](https://www.conventionalcommits.org/en) for our commit messages:
-
-- `fix`: bug fixes, e.g. fix crash due to deprecated method.
-- `feat`: new features, e.g. add new method to the module.
-- `refactor`: code refactor, e.g. migrate from class components to hooks.
-- `docs`: changes into documentation, e.g. add usage example for the module.
-- `test`: adding or updating tests, e.g. add integration tests using detox.
-- `chore`: tooling changes, e.g. change CI config.
-
-Our pre-commit hooks verify that your commit message matches this format when committing.
-
-
-### Publishing to npm
-
-We use [release-it](https://github.com/release-it/release-it) to make it easier to publish new versions. It handles common tasks like bumping version based on semver, creating tags and releases etc.
-
-To publish new versions, run the following:
+**Run with coverage report:**
 
 ```sh
-yarn release
+yarn test --coverage
 ```
 
+**Type-check without emitting:**
 
-### Scripts
+```sh
+yarn typecheck
+```
 
-The `package.json` file contains various scripts for common tasks:
+**Lint the codebase:**
 
-- `yarn`: setup project by installing dependencies.
-- `yarn typecheck`: type-check files with TypeScript.
-  - `yarn lint`: lint files with [ESLint](https://eslint.org/).
-    - `yarn test`: run unit tests with [Jest](https://jestjs.io/).
-  - `yarn example start`: start the Metro server for the example app.
-- `yarn example android`: run the example app on Android.
-- `yarn example ios`: run the example app on iOS.
-  - `yarn example web`: run the example app on Web.
-- `yarn example build:web`: build the example app for Web.
-  
-### Sending a pull request
+```sh
+yarn lint
+```
+
+**Fix auto-fixable lint issues:**
+
+```sh
+yarn lint --fix
+```
+
+Coverage thresholds are enforced at:
+- Lines: **90%**
+- Functions: **90%**
+- Branches: **85%**
+
+The CI pipeline will fail if any threshold is not met.
+
+---
+
+## Commit Message Format
+
+We follow the [Conventional Commits](https://www.conventionalcommits.org/en) specification. All commit messages must be in the format:
+
+```
+<type>(<scope>): <summary>
+```
+
+**Allowed types:**
+
+| Type | When to use |
+|------|-------------|
+| `feat` | A new feature |
+| `fix` | A bug fix |
+| `docs` | Documentation-only changes |
+| `test` | Adding or updating tests |
+| `refactor` | Code change that's neither a fix nor feature |
+| `chore` | Build, CI, or tooling changes |
+| `perf` | Performance improvements |
+
+**Examples:**
+
+```
+feat(wheel): add weighted spin mode
+fix(geometry): correct full-circle arc path
+docs: update README with migration guide
+test(winner): add 100k iteration distribution test
+chore(ci): add coverage threshold enforcement
+```
+
+Our pre-commit hooks (via `lefthook`) verify commit message format and run lint + typecheck before each commit.
+
+---
+
+## Scripts Reference
+
+| Script | Description |
+|--------|-------------|
+| `yarn` | Install all dependencies (root + workspaces) |
+| `yarn typecheck` | Type-check files with TypeScript |
+| `yarn lint` | Lint with ESLint |
+| `yarn lint --fix` | Auto-fix lint issues |
+| `yarn test` | Run unit tests with Jest |
+| `yarn test --coverage` | Run tests with coverage report |
+| `yarn prepare` | Build the library (`lib/module` + `lib/typescript`) |
+| `yarn clean` | Delete `lib/` output directory |
+| `yarn release` | Publish a new version (maintainers only) |
+| `yarn example start` | Start Metro bundler for example app |
+| `yarn example android` | Run example on Android emulator/device |
+| `yarn example ios` | Run example on iOS simulator/device |
+| `yarn example web` | Run example in browser |
+| `yarn example build:web` | Build the example app for Web |
+
+---
+
+## Sending a Pull Request
 
 > **Working on your first pull request?** You can learn how from this _free_ series: [How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github).
 
 When you're sending a pull request:
 
-- Prefer small pull requests focused on one change.
-- Verify that linters and tests are passing.
-- Review the documentation to make sure it looks good.
+- Prefer **small, focused** pull requests (one feature or fix per PR).
+- Verify that **linters and tests pass** (`yarn lint` + `yarn test`).
+- Verify **TypeScript compiles** cleanly (`yarn typecheck`).
+- Review the documentation and update it if your change affects the public API.
 - Follow the pull request template when opening a pull request.
-- For pull requests that change the API or implementation, discuss with maintainers first by opening an issue.
+- For PRs that change the API or implementation significantly, please **open an issue first** to discuss with maintainers.
