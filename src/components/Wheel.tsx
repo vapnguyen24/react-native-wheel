@@ -111,19 +111,34 @@ export const Wheel = React.memo(
         [renderCenter, cx, cy, resolvedTheme.background]
       );
 
-      const rendererProps: WheelSVGProps = {
-        rotation,
-        segmentLayouts,
-        gesture,
-        size,
-        cx,
-        cy,
-        borderColor: resolvedTheme.border,
-        renderPointer: effectiveRenderPointer,
-        renderCenter: effectiveRenderCenter,
-        renderLabel,
-        renderSlice,
-      };
+      const rendererProps: WheelSVGProps = useMemo(
+        () => ({
+          rotation,
+          segmentLayouts,
+          gesture,
+          size,
+          cx,
+          cy,
+          borderColor: resolvedTheme.border,
+          renderPointer: effectiveRenderPointer,
+          renderCenter: effectiveRenderCenter,
+          renderLabel,
+          renderSlice,
+        }),
+        [
+          rotation,
+          segmentLayouts,
+          gesture,
+          size,
+          cx,
+          cy,
+          resolvedTheme.border,
+          effectiveRenderPointer,
+          effectiveRenderCenter,
+          renderLabel,
+          renderSlice,
+        ]
+      );
 
       const a11yProps = {
         accessible: true as const,

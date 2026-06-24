@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import type { WheelState } from '../types';
 
 const VALID_TRANSITIONS: Readonly<Record<WheelState, readonly WheelState[]>> = {
-  idle: ['spinning'],
+  idle: ['idle', 'spinning'],
   spinning: ['decelerating', 'stopped', 'idle'],
   decelerating: ['stopped', 'idle'],
   stopped: ['idle', 'spinning'],

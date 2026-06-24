@@ -7,8 +7,6 @@ import type { PanGesture } from 'react-native-gesture-handler';
 import Svg, { G } from 'react-native-svg';
 
 import type { SegmentLayout, WheelItem } from '../types';
-import { CenterDot } from './CenterDot';
-import { Pointer } from './Pointer';
 import { SectorSlice } from './SectorSlice';
 
 const BORDER_WIDTH = 8;
@@ -32,8 +30,8 @@ export const WheelSVG = React.memo(function WheelSVGComponent({
   segmentLayouts,
   gesture,
   size,
-  cx,
-  cy,
+  cx: _cx,
+  cy: _cy,
   borderColor,
   renderPointer,
   renderCenter,
@@ -65,9 +63,9 @@ export const WheelSVG = React.memo(function WheelSVGComponent({
         </Animated.View>
       </GestureDetector>
 
-      {/* Non-rotating overlays */}
-      {renderPointer != null ? renderPointer() : <Pointer size={size} />}
-      {renderCenter != null ? renderCenter() : <CenterDot cx={cx} cy={cy} />}
+      {/* Non-rotating overlays — always provided by parent <Wheel> */}
+      {renderPointer?.()}
+      {renderCenter?.()}
 
       {/* Outer border ring — sits on top, does not rotate */}
       {borderColor != null && (
