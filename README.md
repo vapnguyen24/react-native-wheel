@@ -7,9 +7,13 @@ A high-performance, fully customizable **Wheel of Fortune / Spinning Wheel** com
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![coverage](https://img.shields.io/badge/coverage-90%25-brightgreen)](https://github.com/vapnguyen24/react-native-wheel/actions)
 
-<video src="https://github.com/user-attachments/assets/b098b25f-fa54-495f-9ecf-7a261979cbce" autoplay loop muted playsinline width="600"></video>
 
-> Full demo: [assets/full-demo.mp4](assets/full-demo.mp4)
+### Short demo
+![react-native-wheel short demo](assets/short-demo.gif)
+
+
+### Full demo
+![assets/full-demo.mp4](assets/full-demo.gif)
 
 ---
 
